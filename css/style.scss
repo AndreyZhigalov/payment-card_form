@@ -1,0 +1,219 @@
+:root {
+  --page-bg-color: #0e2339;
+  --text-color: #757575;
+  --form-bg-color: #ffffff;
+  --form-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --card-bg-color: #ffffff;
+  --card-text-color: #ffffff;
+  --card-text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  --card-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  --border: 1px solid rgb(201, 201, 201);
+  --active-bg-color: #4f4f4f;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--page-bg-color);
+}
+.payment__form {
+  position: relative;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  min-width: 375px;
+  background-color: var(--form-bg-color);
+  border-radius: 20px;
+  box-shadow: var(--form-shadow);
+}
+
+.card {
+  &__container {
+    position: absolute;
+    top: -80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5cm;
+    margin: 0;
+    width: 9cm;
+    height: 5cm;
+    overflow: hidden;
+    border-radius: 20px;
+    background-image: url(/assets/card_background/5.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: var(--card-bg-color);
+    background-size: cover;
+    color: var(--card-text-color);
+    text-shadow: var(--card-text-shadow);
+    box-shadow: var(--card-shadow);
+  }
+  &__payment-system {
+    height: 20px;
+    width: max-content;
+    align-self: flex-end;
+  }
+  &__number {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 24px;
+    list-style: none;
+  }
+  &__data-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__data {
+    p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}
+.userdata {
+  &__container {
+    padding: 0;
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 0;
+    color: var(--text-color);
+    & label {
+      width: max-content;
+      align-self: flex-start;
+      font-weight: 600;
+    }
+  }
+  &__card-number__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  &__card-number,
+  &__holder-name,
+  &__date-value,
+  &__cvv,
+  &__date-list {
+    margin: 0;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: var(--card-bg-color);
+    border: var(--border);
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  &__card-number {
+    margin-bottom: 10px;
+    width: 25%;
+  }
+  &__date-wrapper {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__date-container {
+    display: flex;
+    gap: 10px;
+  }
+  &__date-dropdown {
+    position: relative;
+  }
+  &__date-dropdown:hover > &__date-list {
+    display: block;
+    transition: opacity 0.05s;
+  }
+  &__date-dropdown:hover > &__arrow {
+    transform: rotate(90deg);
+  }
+  &__arrow {
+    z-index: 1;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url(../assets/arrow.png) center center no-repeat;
+    background-size: cover;
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+  }
+  &__cvv-wrapper {
+    margin-left: 10px;
+  }
+  &__header {
+    position: absolute;
+    transform: translateY(-20px);
+    font-weight: 600;
+  }
+  &__date-value {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__date-value,
+  &__cvv,
+  &__date-list {
+    width: 120px;
+  }
+  &__date-list {
+    z-index: 0;
+    position: absolute;
+    display: none;
+    top: 40px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 10px 10px;
+    border-top-color: transparent;
+    list-style: none;
+  }
+  &__date {
+    padding: 5px 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--active-bg-color);
+      color: var(--card-text-color);
+    }
+    &:first-of-type {
+      padding-top: 20px;
+    }
+  }
+  &__cvv {
+    width: 80px;
+  }
+}
+
+.payment__submit-btn {
+  padding: 10px;
+  width: 100%;
+  background-color: var(--form-bg-color);
+  font-size: 18px;
+  border-radius: 5px;
+  border: var(--border);
+  transition-property: background-color, color;
+  transition-duration: 0.1s;
+  &:active {
+    color: var(--card-bg-color);
+    background-color: var(--active-bg-color);
+  }
+}

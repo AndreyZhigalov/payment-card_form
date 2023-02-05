@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Payment Form</title>
+  </head>
+  <body>
+    <form action="" class="payment__form">
+      <figure class="card__container">
+        <img
+          class="card__payment-system"
+          src="assets/payment_system/visa.webp"
+          alt="Платёжная система"
+        />
+        <ul class="card__number">
+          <li class="card__number-part">####</li>
+          <li class="card__number-part">####</li>
+          <li class="card__number-part">####</li>
+          <li class="card__number-part">####</li>
+        </ul>
+        <div class="card__data-wrapper">
+          <div class="card__data">
+            <small class="card__data-header">Владелец</small>
+            <p><span class="card__name">ИВАН</span> <span class="card__surname">ИВАНЫЧ</span></p>
+          </div>
+          <div class="card__data">
+            <small class="card__data-header">Срок</small>
+            <p><span class="card__month">09</span>/<span class="card__year">20</span></p>
+          </div>
+        </div>
+      </figure>
+      <fieldset class="userdata__container">
+        <label for="number">Номер карты</label>
+        <div class="userdata__card-number__wrapper">
+            <input class="userdata__card-number" type="text" maxlength="4" data-number_part="1" name="number" />
+            <input class="userdata__card-number" type="text" maxlength="4" data-number_part="2" name="number" />
+            <input class="userdata__card-number" type="text" maxlength="4" data-number_part="3" name="number" />
+            <input class="userdata__card-number" type="text" maxlength="4" data-number_part="4" name="number" />
+        </div>
+        <label for="name">Имя и фамилия владельца</label>
+        <input class="userdata__holder-name" type="text" name="name" />
+        <div class="userdata__date-wrapper">
+          <div class="userdata__date-container">
+              <div class="userdata__date-dropdown">
+                <span class="userdata__header">Срок</span>
+                <input class="userdata__date-value" data-month="" value="Месяц" readonly />
+                <span class="userdata__arrow"></span>
+                <ul class="userdata__date-list">
+                  <li class="userdata__date" data-month="1">1</li>
+                  <li class="userdata__date" data-month="2">2</li>
+                  <li class="userdata__date" data-month="3">3</li>
+                  <li class="userdata__date" data-month="4">4</li>
+                  <li class="userdata__date" data-month="5">5</li>
+                  <li class="userdata__date" data-month="6">6</li>
+                  <li class="userdata__date" data-month="7">7</li>
+                  <li class="userdata__date" data-month="8">8</li>
+                  <li class="userdata__date" data-month="9">9</li>
+                  <li class="userdata__date" data-month="10">10</li>
+                  <li class="userdata__date" data-month="11">11</li>
+                  <li class="userdata__date" data-month="12">12</li>
+                </ul>
+              </div>
+              <div class="userdata__date-dropdown">
+                <input class="userdata__date-value" data-year="" value="Год" readonly/>
+                <span class="userdata__arrow"></span>
+                <ul class="userdata__date-list years">                  
+                </ul>
+              </div>
+          </div>
+          <label for="cvv" class="userdata__cvv-wrapper">
+            <span class="userdata__header">CVV</span>
+            <input class="userdata__cvv" type="text" name="cvv" maxlength="3" id=""
+          /></label>
+        </div>
+        <button class="payment__submit-btn" type="submit">Отправить</button>
+      </fieldset>
+    </form>
+    <script src="js/index.js"></script>
+  </body>
+</html>
